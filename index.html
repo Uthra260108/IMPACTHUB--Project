@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ImpactHub - Volunteer Management &amp; Student Guidance Platform</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/landing.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Top Sticky Navigation -->
+  <header class="landing-nav">
+    <div class="landing-container landing-nav-inner">
+      <a href="index.html" class="brand-logo" aria-label="ImpactHub Home">
+        <div class="brand-mark">
+          <!-- Guiding star / compass abstract icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="currentColor"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">Impact<span>Hub</span></span>
+          <span class="brand-tagline">Guidance Today. Brighter Tomorrows.</span>
+        </div>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="landing-nav-links">
+          <li><a href="#portals">Access Portals</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#about">Mission</a></li>
+          <li><a href="#demo-access" class="btn btn-secondary btn-sm">Demo Accounts</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="landing-container hero-grid">
+        <div>
+          <div class="hero-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            Academic &amp; Development Mentorship Network
+          </div>
+          <h1 class="hero-title">
+            Guidance Today.<br>
+            <span>Brighter Tomorrows.</span>
+          </h1>
+          <p class="hero-description">
+            ImpactHub bridges ambitious university undergraduates with dedicated volunteer professionals, alumni, and educators. Fostering academic excellence, career navigation, and personal resilience through structured one-on-one mentorship.
+          </p>
+          <div class="hero-actions">
+            <a href="#portals" class="btn btn-primary btn-lg">Choose Your Portal &rarr;</a>
+            <a href="#how-it-works" class="btn btn-outline btn-lg">Learn How It Works</a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-visual-card">
+            <div class="hero-quote-mark">&ldquo;</div>
+            <p class="hero-mission-statement" id="about">
+              "Connecting caring volunteers with students to create opportunities for learning, confidence, and growth."
+            </p>
+            <div class="hero-visual-meta">
+              <div class="hero-avatar-stack">
+                <div class="hero-avatar-circle" title="Dr. Evelyn Reed">ER</div>
+                <div class="hero-avatar-circle" title="Julian Patel">JP</div>
+                <div class="hero-avatar-circle" title="Clara O'Connor">CO</div>
+              </div>
+              <div>
+                <strong style="display:block; font-size:0.88rem; color:var(--color-wenge);">Active Volunteer Mentors</strong>
+                <span style="font-size:0.78rem; color:var(--color-liver);">Guiding STEM, Business &amp; Engineering students</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Live Demonstration Impact Statistics Bar -->
+    <section class="landing-container" aria-label="Platform Impact Metrics">
+      <div class="impact-stats-bar">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-number" id="landing-stat-students">6</div>
+            <div class="stat-label">Active Students</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" id="landing-stat-mentors">3</div>
+            <div class="stat-label">Approved Mentors</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" id="landing-stat-sessions">4</div>
+            <div class="stat-label">Guidance Sessions</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" id="landing-stat-resources">6</div>
+            <div class="stat-label">Curated Resources</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Three Distinct Login Portals -->
+    <section class="portals-section" id="portals">
+      <div class="landing-container">
+        <div class="section-header">
+          <span class="section-tag">Dedicated Experiences</span>
+          <h2 class="section-title">Three Tailored Portals</h2>
+          <p class="section-subtitle">
+            ImpactHub provides strictly separated dashboards and authentication flows designed specifically for students, volunteers, and platform administrators.
+          </p>
+        </div>
+
+        <div class="portals-grid">
+          <!-- Student Portal Card -->
+          <article class="portal-card card-student">
+            <div class="portal-icon">
+              <!-- Graduation / Student Icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+              </svg>
+            </div>
+            <h3 class="portal-title">Student Portal</h3>
+            <p class="portal-desc">
+              For undergraduates seeking guidance. Request one-on-one sessions with your assigned mentor, track academic progress, and access curated development resources.
+            </p>
+            <ul class="portal-features">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Personalized mentor guidance notes
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Schedule &amp; manage guidance sessions
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Track learning resources &amp; milestones
+              </li>
+            </ul>
+            <div class="portal-btn-group">
+              <a href="student-login.html" class="btn btn-primary btn-block">Student Login &rarr;</a>
+              <a href="student-register.html" class="btn btn-soft btn-block">Register as Student</a>
+            </div>
+          </article>
+
+          <!-- Volunteer Portal Card -->
+          <article class="portal-card card-volunteer">
+            <div class="portal-icon">
+              <!-- Mentorship / Heart Hand Icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+              </svg>
+            </div>
+            <h3 class="portal-title">Volunteer Portal</h3>
+            <p class="portal-desc">
+              For caring mentors, alumni, and industry advisors. Review incoming student guidance requests, schedule sessions, document developmental feedback, and set availability.
+            </p>
+            <ul class="portal-features">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Review &amp; approve student requests
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Document confidential guidance notes
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Manage weekly availability schedules
+              </li>
+            </ul>
+            <div class="portal-btn-group">
+              <a href="volunteer-login.html" class="btn btn-secondary btn-block">Volunteer Login &rarr;</a>
+              <a href="volunteer-register.html" class="btn btn-soft btn-block">Apply as Volunteer</a>
+            </div>
+          </article>
+
+          <!-- Admin Portal Card -->
+          <article class="portal-card card-admin">
+            <div class="portal-icon">
+              <!-- Shield / Admin Oversight Icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <h3 class="portal-title">Admin Portal</h3>
+            <p class="portal-desc">
+              For program directors and guidance coordinators. Oversee mentor pairings, approve volunteer applications, publish development activities, and monitor platform analytics.
+            </p>
+            <ul class="portal-features">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Assign &amp; reassign student mentors
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Review volunteer credentials &amp; approval
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Live analytics &amp; demonstration reset
+              </li>
+            </ul>
+            <div class="portal-btn-group">
+              <a href="admin-login.html" class="btn btn-outline btn-block">Admin Console &rarr;</a>
+              <a href="#demo-access" class="btn btn-soft btn-block">Review Credentials</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works-section" id="how-it-works">
+      <div class="landing-container">
+        <div class="section-header">
+          <span class="section-tag">Methodology</span>
+          <h2 class="section-title">How ImpactHub Works</h2>
+          <p class="section-subtitle">
+            A structured, human-centric approach ensuring every student receives tailored academic and career empowerment.
+          </p>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h3>Connect &amp; Pair</h3>
+            <p>
+              Students register with their academic discipline, year, and focus areas. Administrators review profiles and pair students with vetted volunteer mentors based on mutual expertise.
+            </p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <h3>Request &amp; Guide</h3>
+            <p>
+              Students request dedicated guidance sessions on specific topics â€” from capstone architecture to interview preparation. Mentors schedule sessions and provide constructive feedback notes.
+            </p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <h3>Track &amp; Flourish</h3>
+            <p>
+              Participants track milestone progress through curated learning resources, campus workshops, and collaborative activities, maintaining longitudinal growth across the academic year.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Demo Access Banner for Evaluators -->
+    <section class="landing-container" id="demo-access">
+      <div class="demo-banner">
+        <div class="demo-banner-content">
+          <h3>Quick Evaluation Credentials</h3>
+          <p>
+            This prototype is pre-configured with demonstration accounts for academic grading and presentation. All portals feature one-click test autofill buttons on their respective login screens.
+          </p>
+        </div>
+        <div class="demo-banner-creds">
+          <div class="cred-badge">
+            <strong>Admin Demo</strong>
+            <code>admin</code> / <code>adminpassword123</code>
+          </div>
+          <div class="cred-badge">
+            <strong>Student Demo</strong>
+            <code>STU2024001</code> / <code>studentpassword123</code>
+          </div>
+          <div class="cred-badge">
+            <strong>Volunteer Demo</strong>
+            <code>VOL2024001</code> / <code>volunteerpassword123</code>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="landing-footer">
+    <div class="landing-container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="brand-logo" style="margin-bottom: 16px;">
+            <div class="brand-mark" style="background: #FFFFFF; color: var(--color-puce-red);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="currentColor"/>
+              </svg>
+            </div>
+            <div class="brand-text">
+              <span class="brand-name" style="color: #FFFFFF;">Impact<span>Hub</span></span>
+              <span class="brand-tagline" style="color: var(--color-platinum);">Guidance Platform</span>
+            </div>
+          </a>
+          <p style="font-size: 0.88rem; color: #E8DDDD; line-height: 1.6;">
+            A college Software Engineering project prototype demonstrating frontend architecture, state management using browser localStorage, and role-based portal experiences.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Portals</h4>
+          <ul>
+            <li><a href="student-login.html">Student Portal</a></li>
+            <li><a href="volunteer-login.html">Volunteer Portal</a></li>
+            <li><a href="admin-login.html">Admin Console</a></li>
+            <li><a href="student-register.html">Student Registration</a></li>
+            <li><a href="volunteer-register.html">Volunteer Application</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#about">Mission Statement</a></li>
+            <li><a href="#portals">Portal Directory</a></li>
+            <li><a href="#demo-access">Demo Credentials</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Project Details</h4>
+          <ul>
+            <li><span style="font-size: 0.88rem; opacity: 0.85;">Vanilla HTML5 &amp; CSS3</span></li>
+            <li><span style="font-size: 0.88rem; opacity: 0.85;">Vanilla JavaScript (ES6)</span></li>
+            <li><span style="font-size: 0.88rem; opacity: 0.85;">Client-Side localStorage</span></li>
+            <li><span style="font-size: 0.88rem; opacity: 0.85;">No Server Required</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 ImpactHub. College Software Engineering Project Prototype.</div>
+        <div>Designed with Mauve, Dusty Rose, Wenge &amp; Puce Red Identity.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/utils.js"></script>
+  <script>
+    // Update live impact stats on landing page from persistent demonstration data
+    document.addEventListener('DOMContentLoaded', () => {
+      const stats = StorageService.getPlatformStats();
+      const stuEl = document.getElementById('landing-stat-students');
+      const menEl = document.getElementById('landing-stat-mentors');
+      const sesEl = document.getElementById('landing-stat-sessions');
+      const resEl = document.getElementById('landing-stat-resources');
+
+      if (stuEl) stuEl.textContent = stats.totalStudents;
+      if (menEl) menEl.textContent = stats.approvedVolunteers;
+      if (sesEl) sesEl.textContent = stats.scheduledSessions + stats.completedSessions;
+      if (resEl) resEl.textContent = stats.totalResources;
+    });
+  </script>
+</body>
+</html>

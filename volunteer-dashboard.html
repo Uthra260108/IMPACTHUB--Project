@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Volunteer Portal - ImpactHub</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <div class="sidebar-backdrop"></div>
+
+  <div class="app-layout">
+    <!-- Sidebar Navigation -->
+    <aside class="app-sidebar" aria-label="Volunteer Navigation">
+      <div class="sidebar-header">
+        <a href="index.html" class="brand-logo">
+          <div class="brand-mark" style="background:#FFFFFF; color:var(--color-rosy-brown);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="currentColor"/>
+            </svg>
+          </div>
+          <div class="brand-text">
+            <span class="brand-name">Impact<span>Hub</span></span>
+            <span class="brand-tagline">Volunteer Portal</span>
+          </div>
+        </a>
+        <button class="sidebar-close-btn" aria-label="Close Navigation">&times;</button>
+      </div>
+
+      <div class="sidebar-role-indicator">
+        <span class="role-dot volunteer"></span>
+        <span class="role-text-label">Volunteer Mentor</span>
+      </div>
+
+      <ul class="sidebar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" data-target="sec-vol-overview">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            Overview
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-target="sec-vol-students">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            My Students
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-target="sec-vol-requests">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+            Guidance Requests
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-target="sec-vol-sessions">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Manage Sessions
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-target="sec-vol-notes">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+            Guidance Notes
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-target="sec-vol-availability">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Availability
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-target="sec-vol-profile">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            My Profile
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-target="sec-vol-notifications">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+            Notifications
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-footer">
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-avatar" id="sidebar-user-avatar" style="background:var(--color-rosy-brown);">E</div>
+          <div class="sidebar-user-meta">
+            <div class="sidebar-user-name" id="sidebar-user-name">Dr. Evelyn Reed</div>
+            <div class="sidebar-user-sub" id="sidebar-user-sub">Volunteer Mentor</div>
+          </div>
+        </div>
+        <button class="sidebar-logout-btn" onclick="AuthService.logout()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          Sign Out
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <div class="app-main">
+      <header class="app-topbar">
+        <div class="topbar-left">
+          <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+          <h2 class="topbar-page-title" id="topbar-title">Volunteer Mentor Dashboard</h2>
+        </div>
+
+        <div class="topbar-right">
+          <div class="topbar-notif-wrap">
+            <button class="topbar-icon-btn" id="btn-toggle-notifs" aria-label="View notifications">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+              <span class="notif-badge-count" id="notif-badge-count" style="display:none;">0</span>
+            </button>
+          </div>
+
+          <div class="topbar-user-pill">
+            <div class="topbar-user-avatar" id="volunteer-topbar-avatar" style="background:var(--color-rosy-brown);">E</div>
+            <span class="topbar-user-name" id="volunteer-topbar-name">Dr. Evelyn Reed</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Dashboard Content -->
+      <main class="dashboard-content">
+
+        <!-- ================= SECTION A: OVERVIEW ================= -->
+        <section id="sec-vol-overview" class="tab-section active">
+          <div style="margin-bottom: 24px;">
+            <h1 style="font-size: 1.85rem; color: var(--color-wenge);">
+              Welcome, <span id="volunteer-welcome-name">Dr. Evelyn Reed</span>
+            </h1>
+            <p style="color: var(--color-liver);">Review incoming guidance requests, track your assigned mentees, and log session outcomes.</p>
+          </div>
+
+          <!-- Summary Metric Cards -->
+          <div class="stats-cards-row">
+            <div class="summary-card">
+              <div class="summary-icon" style="color:var(--color-rosy-brown);">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <div class="summary-info">
+                <div class="summary-label">Assigned Students</div>
+                <div class="summary-value" id="vol-stat-students">0</div>
+              </div>
+            </div>
+
+            <div class="summary-card">
+              <div class="summary-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              </div>
+              <div class="summary-info">
+                <div class="summary-label">Upcoming Sessions</div>
+                <div class="summary-value" id="vol-stat-scheduled">0</div>
+              </div>
+            </div>
+
+            <div class="summary-card">
+              <div class="summary-icon" style="color:#1E6B3A;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </div>
+              <div class="summary-info">
+                <div class="summary-label">Completed Sessions</div>
+                <div class="summary-value" id="vol-stat-completed">0</div>
+              </div>
+            </div>
+
+            <div class="summary-card">
+              <div class="summary-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+              </div>
+              <div class="summary-info">
+                <div class="summary-label">Pending Requests</div>
+                <div class="summary-value" id="vol-stat-requests">0</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Overview Scheduled Sessions List -->
+          <div class="card mb-lg">
+            <div class="card-header">
+              <h3 class="card-title">Scheduled Guidance Sessions</h3>
+            </div>
+            <div class="card-body" id="vol-overview-sessions">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= SECTION B: MY STUDENTS ================= -->
+        <section id="sec-vol-students" class="tab-section">
+          <div style="margin-bottom: 24px;">
+            <h1 style="font-size: 1.85rem; color: var(--color-wenge);">Assigned Mentees</h1>
+            <p style="color: var(--color-liver);">Undergraduates paired with you by the platform administrator for academic and professional guidance.</p>
+          </div>
+
+          <div id="vol-students-container">
+            <!-- Dynamically populated via VolunteerApp.renderMyStudents() -->
+          </div>
+        </section>
+
+        <!-- ================= SECTION C: GUIDANCE REQUESTS ================= -->
+        <section id="sec-vol-requests" class="tab-section">
+          <div style="margin-bottom: 24px;">
+            <h1 style="font-size: 1.85rem; color: var(--color-wenge);">Student Guidance Requests</h1>
+            <p style="color: var(--color-liver);">Review incoming meeting topics submitted by your mentees. Accept and schedule or decline with feedback.</p>
+          </div>
+
+          <div class="card">
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Student</th>
+                    <th>Requested Topic &amp; Notes</th>
+                    <th>Preferred Date &amp; Time</th>
+                    <th>Status</th>
+                    <th>Submitted</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="vol-requests-table-body">
+                  <!-- Dynamically populated -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= SECTION D: MANAGE SESSIONS ================= -->
+        <section id="sec-vol-sessions" class="tab-section">
+          <div style="margin-bottom: 24px;">
+            <h1 style="font-size: 1.85rem; color: var(--color-wenge);">Manage Mentoring Sessions</h1>
+            <p style="color: var(--color-liver);">Mark meetings as completed, log constructive summaries and action items, or cancel.</p>
+          </div>
+
+          <div class="card">
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Student</th>
+                    <th>Topic</th>
+                    <th>Date &amp; Time</th>
+                    <th>Location / Room</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="vol-sessions-table-body">
+                  <!-- Dynamically populated -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= SECTION E: GUIDANCE NOTES ================= -->
+        <section id="sec-vol-notes" class="tab-section">
+          <div class="flex-between mb-lg" style="flex-wrap: wrap; gap: 16px;">
+            <div>
+              <h1 style="font-size: 1.85rem; color: var(--color-wenge);">Developmental Guidance Notes</h1>
+              <p style="color: var(--color-liver);">Private feedback and milestone notes visible strictly to the respective mentee.</p>
+            </div>
+            <button class="btn btn-secondary" onclick="VolunteerApp.openNewNoteModal()">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              Create Guidance Note
+            </button>
+          </div>
+
+          <div id="vol-notes-container">
+            <!-- Dynamically populated -->
+          </div>
+        </section>
+
+        <!-- ================= SECTION F: AVAILABILITY ================= -->
+        <section id="sec-vol-availability" class="tab-section">
+          <div style="margin-bottom: 24px;">
+            <h1 style="font-size: 1.85rem; color: var(--color-wenge);">Mentoring Availability</h1>
+            <p style="color: var(--color-liver);">Specify the days of the week and hour blocks you are available for student consultations.</p>
+          </div>
+
+          <div class="card" style="max-width: 680px;">
+            <div class="card-header">
+              <h3 class="card-title">Weekly Mentoring Schedule</h3>
+            </div>
+            <div class="card-body">
+              <form id="form-vol-availability">
+                <div class="form-group">
+                  <label for="vol-avail-text" class="form-label">Available Days &amp; Preferred Time Slots</label>
+                  <input type="text" id="vol-avail-text" class="form-control" placeholder="e.g. Tuesdays &amp; Thursdays, 2:00 PM â€“ 5:30 PM">
+                  <div class="form-hint">Displayed to your assigned mentees when they draft guidance requests.</div>
+                </div>
+                <button type="submit" class="btn btn-secondary">Update Availability</button>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= SECTION G: MY PROFILE ================= -->
+        <section id="sec-vol-profile" class="tab-section">
+          <div style="margin-bottom: 24px;">
+            <h1 style="font-size: 1.85rem; color: var(--color-wenge);">Volunteer Profile</h1>
+            <p style="color: var(--color-liver);">Keep your biography, guidance skills, and professional contact details up to date.</p>
+          </div>
+
+          <div class="card" style="max-width: 780px;">
+            <div class="card-header">
+              <h3 class="card-title">Mentor Credentials</h3>
+              <span class="status-pill status-active">Approved Mentor</span>
+            </div>
+            <div class="card-body">
+              <form id="form-vol-profile">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">Volunteer ID</label>
+                    <div style="padding: 10px 14px; background: #FAF5F6; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-md); font-weight: 600; color: var(--color-wenge);" id="vol-profile-id">
+                      VOL2024001
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="vol-profile-name" class="form-label">Full Name &amp; Title</label>
+                    <input type="text" id="vol-profile-name" class="form-control" readonly style="background:#FAF5F6;">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="vol-profile-expertise" class="form-label">Primary Area of Expertise</label>
+                  <input type="text" id="vol-profile-expertise" class="form-control" readonly style="background:#FAF5F6;">
+                </div>
+
+                <div class="form-group">
+                  <label for="vol-profile-skills" class="form-label">Guidance Competencies &amp; Skills</label>
+                  <input type="text" id="vol-profile-skills" class="form-control">
+                  <div class="form-hint">Comma separated (e.g. Python, Cloud Arch, Resume Building)</div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="vol-profile-email" class="form-label">Contact Email</label>
+                    <input type="email" id="vol-profile-email" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <label for="vol-profile-phone" class="form-label">Contact Phone</label>
+                    <input type="tel" id="vol-profile-phone" class="form-control">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="vol-profile-bio" class="form-label">Professional Biography &amp; Mentoring Philosophy</label>
+                  <textarea id="vol-profile-bio" class="form-control" rows="4"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-secondary">Save Profile Updates</button>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= SECTION H: NOTIFICATIONS ================= -->
+        <section id="sec-vol-notifications" class="tab-section">
+          <div style="margin-bottom: 24px;">
+            <h1 style="font-size: 1.85rem; color: var(--color-wenge);">Mentor Announcements &amp; Alerts</h1>
+            <p style="color: var(--color-liver);">Administrative updates, campus calendar milestones, and student requests.</p>
+          </div>
+
+          <div id="vol-notif-list">
+            <!-- Dynamically populated -->
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Modal: Schedule Session -->
+  <div class="modal-backdrop" id="modal-schedule-session">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-sched-title">
+      <div class="modal-header">
+        <h3 id="modal-sched-title">Schedule Guidance Session</h3>
+        <button class="modal-close-btn" onclick="Utils.closeModal('modal-schedule-session')">&times;</button>
+      </div>
+      <form id="form-schedule-session">
+        <div class="modal-body">
+          <input type="hidden" id="sched-req-id">
+          <input type="hidden" id="sched-student-id">
+          <div class="form-group">
+            <label for="sched-topic" class="form-label">Session Topic <span class="required">*</span></label>
+            <input type="text" id="sched-topic" class="form-control" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="sched-date" class="form-label">Session Date <span class="required">*</span></label>
+              <input type="date" id="sched-date" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="sched-time" class="form-label">Session Time <span class="required">*</span></label>
+              <input type="time" id="sched-time" class="form-control" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="sched-location" class="form-label">Meeting Room / Link</label>
+            <input type="text" id="sched-location" class="form-control" placeholder="Virtual Guidance Room A or Consultation Pod">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" onclick="Utils.closeModal('modal-schedule-session')">Cancel</button>
+          <button type="submit" class="btn btn-primary">Confirm &amp; Schedule</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Complete Session & Add Summary -->
+  <div class="modal-backdrop" id="modal-complete-session">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-comp-title">
+      <div class="modal-header">
+        <h3 id="modal-comp-title">Conclude Guidance Session</h3>
+        <button class="modal-close-btn" onclick="Utils.closeModal('modal-complete-session')">&times;</button>
+      </div>
+      <form id="form-complete-session">
+        <div class="modal-body">
+          <input type="hidden" id="complete-session-id">
+          <p style="margin-bottom: 16px;">
+            Topic: <strong id="complete-session-topic" style="color:var(--color-wenge);"></strong>
+          </p>
+          <div class="form-group">
+            <label for="complete-session-summary" class="form-label">Session Summary Note <span class="required">*</span></label>
+            <textarea id="complete-session-summary" class="form-control" rows="3" placeholder="Summarize topics discussed, student strengths, and key takeaways..." required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="complete-session-actions" class="form-label">Recommended Action Items for Mentee</label>
+            <textarea id="complete-session-actions" class="form-control" rows="2" placeholder="e.g. 1. Refactor API endpoints, 2. Review IEEE reference handbook"></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" onclick="Utils.closeModal('modal-complete-session')">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save &amp; Mark Completed</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Add Developmental Guidance Note -->
+  <div class="modal-backdrop" id="modal-add-note">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-note-title">
+      <div class="modal-header">
+        <h3 id="modal-note-title">New Guidance Note</h3>
+        <button class="modal-close-btn" onclick="Utils.closeModal('modal-add-note')">&times;</button>
+      </div>
+      <form id="form-add-note">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="note-student-select" class="form-label">Mentee <span class="required">*</span></label>
+            <select id="note-student-select" class="form-control" required></select>
+          </div>
+          <div class="form-group">
+            <label for="note-title-input" class="form-label">Note Title / Subject <span class="required">*</span></label>
+            <input type="text" id="note-title-input" class="form-control" placeholder="e.g. Capstone Architecture Feedback" required>
+          </div>
+          <div class="form-group">
+            <label for="note-content-input" class="form-label">Constructive Notes &amp; Guidance <span class="required">*</span></label>
+            <textarea id="note-content-input" class="form-control" rows="4" placeholder="Write constructive developmental advice..." required></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" onclick="Utils.closeModal('modal-add-note')">Cancel</button>
+          <button type="submit" class="btn btn-secondary">Save Guidance Note</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/volunteer.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      Utils.initMobileSidebar();
+      VolunteerApp.init();
+
+      const notifBtn = document.getElementById('btn-toggle-notifs');
+      if (notifBtn) {
+        notifBtn.addEventListener('click', () => {
+          document.querySelector('[data-target="sec-vol-notifications"]').click();
+        });
+      }
+    });
+  </script>
+</body>
+</html>

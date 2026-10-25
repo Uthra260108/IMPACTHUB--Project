@@ -1,0 +1,308 @@
+/* ==========================================================================
+   IMPACTHUB - AUTHENTICATION & REGISTRATION STYLES
+   ========================================================================== */
+
+.auth-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+}
+
+.auth-card-split {
+  width: 100%;
+  max-width: 1060px;
+  background: #FFFFFF;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-elevated);
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  overflow: hidden;
+  min-height: 640px;
+}
+
+/* Left: Form side */
+.auth-form-side {
+  padding: 48px 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: auto;
+}
+
+.auth-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-liver);
+  transition: color var(--transition-fast);
+}
+.back-link:hover {
+  color: var(--color-puce-red);
+  text-decoration: none;
+}
+.back-link svg {
+  width: 16px;
+  height: 16px;
+}
+
+.auth-header {
+  margin-bottom: 24px;
+}
+.auth-role-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  margin-bottom: 10px;
+}
+.tag-student {
+  background: rgba(118, 46, 63, 0.12);
+  color: var(--color-puce-red);
+}
+.tag-volunteer {
+  background: rgba(185, 144, 153, 0.25);
+  color: var(--color-liver);
+}
+.tag-admin {
+  background: rgba(101, 76, 82, 0.15);
+  color: var(--color-wenge);
+}
+
+.auth-title {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  color: var(--color-wenge);
+  margin-bottom: 6px;
+}
+.auth-subtitle {
+  color: var(--color-liver);
+  font-size: 0.92rem;
+}
+
+/* Inline alerts */
+.auth-alert {
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  font-size: 0.88rem;
+  margin-bottom: 20px;
+  display: none;
+  align-items: flex-start;
+  gap: 10px;
+}
+.auth-alert.active {
+  display: flex;
+}
+.auth-alert.error {
+  background: #FCECEE;
+  color: #8E2332;
+  border: 1px solid #E8B4BA;
+}
+.auth-alert.success {
+  background: #EBF3ED;
+  color: #1E6B3A;
+  border: 1px solid #9FD3B2;
+}
+.auth-alert svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* Demo Credentials Quick Pill */
+.auth-demo-hint {
+  background: rgba(232, 221, 221, 0.5);
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.demo-hint-text {
+  font-size: 0.8rem;
+  color: var(--color-liver);
+}
+.demo-hint-text strong {
+  color: var(--color-wenge);
+}
+.demo-autofill-btn {
+  background: var(--color-wenge);
+  color: #FFFFFF;
+  border: none;
+  font-size: 0.76rem;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background var(--transition-fast);
+}
+.demo-autofill-btn:hover {
+  background: var(--color-puce-red);
+}
+
+.auth-form {
+  margin-bottom: 24px;
+}
+
+.auth-footer {
+  text-align: center;
+  font-size: 0.88rem;
+  color: var(--color-liver);
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 16px;
+}
+.auth-footer a {
+  font-weight: 600;
+  color: var(--color-puce-red);
+}
+
+/* Right: Visual / Editorial side */
+.auth-visual-side {
+  background: linear-gradient(145deg, #654C52 0%, #704A4C 60%, #762E3F 100%);
+  color: #FFFFFF;
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Abstract subtle rose textured overlays */
+.auth-visual-side::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -20%;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(185, 144, 153, 0.35) 0%, transparent 70%);
+  pointer-events: none;
+}
+.auth-visual-side::after {
+  content: '';
+  position: absolute;
+  bottom: -15%;
+  left: -15%;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(232, 221, 221, 0.2) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.auth-visual-top {
+  position: relative;
+  z-index: 2;
+}
+.auth-visual-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #FFFFFF;
+  margin-bottom: 24px;
+}
+.auth-visual-logo .brand-mark {
+  background: #FFFFFF;
+  color: var(--color-puce-red);
+}
+.auth-visual-logo .brand-name {
+  color: #FFFFFF;
+}
+.auth-visual-logo .brand-name span {
+  color: var(--color-rosy-brown);
+}
+.auth-visual-logo .brand-tagline {
+  color: var(--color-platinum);
+}
+
+.auth-visual-middle {
+  position: relative;
+  z-index: 2;
+  margin: 40px 0;
+}
+.auth-quote-mark {
+  font-family: var(--font-serif);
+  font-size: 3.5rem;
+  line-height: 0.7;
+  color: var(--color-rosy-brown);
+  opacity: 0.6;
+  margin-bottom: 12px;
+}
+.auth-quote-text {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  line-height: 1.5;
+  color: #FFFFFF;
+  font-style: italic;
+  margin-bottom: 18px;
+}
+.auth-quote-author {
+  font-size: 0.85rem;
+  color: var(--color-platinum);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+
+.auth-visual-bottom {
+  position: relative;
+  z-index: 2;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 20px;
+}
+.auth-visual-features {
+  list-style: none;
+}
+.auth-visual-features li {
+  font-size: 0.86rem;
+  color: #E8DDDD;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.auth-visual-features li svg {
+  width: 16px;
+  height: 16px;
+  color: var(--color-rosy-brown);
+  flex-shrink: 0;
+}
+
+/* Two-column grid in registration forms */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Demonstration Notice Banner */
+.demo-security-notice {
+  font-size: 0.75rem;
+  color: var(--color-liver);
+  background: rgba(185, 144, 153, 0.15);
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  margin-top: 16px;
+  text-align: center;
+  line-height: 1.4;
+}

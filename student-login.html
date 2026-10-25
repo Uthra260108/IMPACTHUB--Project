@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Login - ImpactHub</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/auth.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <div class="auth-wrapper">
+    <div class="auth-card-split">
+      <!-- Left Form Side -->
+      <div class="auth-form-side">
+        <div>
+          <div class="auth-top-bar">
+            <a href="index.html" class="back-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+              Back to Home
+            </a>
+            <span class="auth-role-tag tag-student">Student Access</span>
+          </div>
+
+          <div class="auth-header">
+            <h1 class="auth-title">Welcome Back</h1>
+            <p class="auth-subtitle">Sign in to your student account to manage guidance sessions and learning resources.</p>
+          </div>
+
+          <!-- Inline Error Banner -->
+          <div id="auth-alert" class="auth-alert error" role="alert">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <span id="auth-alert-text">Error message</span>
+          </div>
+
+          <!-- Evaluator Demo Hint & One-Click Autofill -->
+          <div class="auth-demo-hint">
+            <div class="demo-hint-text">
+              <strong>Evaluation Demo Account:</strong><br>
+              Reg: <code>STU2024001</code> | Pass: <code>studentpassword123</code>
+            </div>
+            <button type="button" class="demo-autofill-btn" id="btn-autofill-student">Fill Demo</button>
+          </div>
+
+          <!-- Login Form -->
+          <form id="form-student-login" class="auth-form" novalidate>
+            <div class="form-group">
+              <label for="student-reg" class="form-label">Student Registration Number <span class="required">*</span></label>
+              <input type="text" id="student-reg" class="form-control" placeholder="e.g. STU2024001" required autocomplete="username">
+              <div class="form-hint">Enter your institutional student ID or demo registration number.</div>
+            </div>
+
+            <div class="form-group">
+              <label for="student-password" class="form-label">Password <span class="required">*</span></label>
+              <div class="password-input-wrap">
+                <input type="password" id="student-password" class="form-control" placeholder="Enter your password" required autocomplete="current-password">
+                <button type="button" class="password-toggle-btn" aria-label="Toggle password visibility">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                </button>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block btn-lg" id="btn-login-submit">
+              Sign In to Student Portal &rarr;
+            </button>
+          </form>
+        </div>
+
+        <div class="auth-footer">
+          <p>Don't have a student profile yet? <a href="student-register.html">Register here</a></p>
+          <div class="demo-security-notice">
+            Note: Client-side demonstration prototype. Data persisted in browser localStorage.
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Visual Side -->
+      <div class="auth-visual-side">
+        <div class="auth-visual-top">
+          <div class="auth-visual-logo">
+            <div class="brand-mark">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="currentColor"/>
+              </svg>
+            </div>
+            <div class="brand-text">
+              <span class="brand-name">Impact<span>Hub</span></span>
+              <span class="brand-tagline">Student Portal</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="auth-visual-middle">
+          <div class="auth-quote-mark">&ldquo;</div>
+          <p class="auth-quote-text">
+            Having an experienced mentor review my project architecture gave me the confidence to excel in technical interviews.
+          </p>
+          <div class="auth-quote-author">Elena Vance â€” Computer Science, 3rd Year</div>
+        </div>
+
+        <div class="auth-visual-bottom">
+          <ul class="auth-visual-features">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              One-on-one sessions tailored to your goals
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Curated library of academic &amp; career guides
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Confidential developmental feedback from mentors
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/auth.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      Utils.setupPasswordToggles();
+
+      const form = document.getElementById('form-student-login');
+      const regInput = document.getElementById('student-reg');
+      const passInput = document.getElementById('student-password');
+      const alertBox = document.getElementById('auth-alert');
+      const alertText = document.getElementById('auth-alert-text');
+      const autofillBtn = document.getElementById('btn-autofill-student');
+
+      // Autofill demo helper
+      if (autofillBtn) {
+        autofillBtn.addEventListener('click', () => {
+          regInput.value = CONFIG.DEMO_ACCOUNTS.STUDENT.regNumber;
+          passInput.value = CONFIG.DEMO_ACCOUNTS.STUDENT.password;
+          alertBox.classList.remove('active');
+        });
+      }
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alertBox.classList.remove('active');
+
+        try {
+          AuthService.loginStudent(regInput.value, passInput.value);
+          window.location.href = 'student-dashboard.html';
+        } catch (err) {
+          alertText.textContent = err.message;
+          alertBox.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

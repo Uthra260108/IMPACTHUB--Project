@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration - ImpactHub</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/auth.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <div class="auth-wrapper">
+    <div class="auth-card-split" style="max-width: 1100px;">
+      <!-- Left Form Side -->
+      <div class="auth-form-side">
+        <div>
+          <div class="auth-top-bar">
+            <a href="student-login.html" class="back-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+              Back to Login
+            </a>
+            <span class="auth-role-tag tag-student">New Student Profile</span>
+          </div>
+
+          <div class="auth-header">
+            <h1 class="auth-title">Create Student Profile</h1>
+            <p class="auth-subtitle">Register to be paired with a dedicated volunteer mentor and begin your guidance journey.</p>
+          </div>
+
+          <!-- Inline Alerts -->
+          <div id="auth-alert" class="auth-alert error" role="alert">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <span id="auth-alert-text">Error text</span>
+          </div>
+
+          <form id="form-student-register" class="auth-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="reg-name" class="form-label">Full Name <span class="required">*</span></label>
+                <input type="text" id="reg-name" class="form-control" placeholder="e.g. Maya Lin" required>
+              </div>
+              <div class="form-group">
+                <label for="reg-num" class="form-label">Registration Number <span class="required">*</span></label>
+                <input type="text" id="reg-num" class="form-control" placeholder="e.g. STU2024099" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="reg-dept" class="form-label">Department / Major <span class="required">*</span></label>
+                <select id="reg-dept" class="form-control" required>
+                  <option value="">-- Select Academic Department --</option>
+                  <option value="Computer Science & Engineering">Computer Science &amp; Engineering</option>
+                  <option value="Data Science & Analytics">Data Science &amp; Analytics</option>
+                  <option value="Mechanical Engineering">Mechanical Engineering</option>
+                  <option value="Electrical Engineering">Electrical Engineering</option>
+                  <option value="Business Administration">Business Administration</option>
+                  <option value="Information Technology">Information Technology</option>
+                  <option value="Biomedical Engineering">Biomedical Engineering</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="reg-year" class="form-label">Year of Study <span class="required">*</span></label>
+                <select id="reg-year" class="form-control" required>
+                  <option value="1st Year">1st Year (Freshman)</option>
+                  <option value="2nd Year" selected>2nd Year (Sophomore)</option>
+                  <option value="3rd Year">3rd Year (Junior)</option>
+                  <option value="4th Year">4th Year (Senior)</option>
+                  <option value="Graduate">Graduate / Master's</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="reg-email" class="form-label">University Email (Optional)</label>
+                <input type="email" id="reg-email" class="form-control" placeholder="name@campus.edu">
+              </div>
+              <div class="form-group">
+                <label for="reg-phone" class="form-label">Phone Contact (Optional)</label>
+                <input type="tel" id="reg-phone" class="form-control" placeholder="+1 (555) 000-0000">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="reg-interests" class="form-label">Guidance Focus &amp; Interests (Optional)</label>
+              <input type="text" id="reg-interests" class="form-control" placeholder="e.g. Research papers, Software internships, Time management">
+              <div class="form-hint">Helps the administrator match you with an ideal volunteer mentor.</div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="reg-pass" class="form-label">Password <span class="required">*</span></label>
+                <div class="password-input-wrap">
+                  <input type="password" id="reg-pass" class="form-control" placeholder="Create a password" required>
+                  <button type="button" class="password-toggle-btn" aria-label="Toggle password visibility">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                  </button>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="reg-pass-confirm" class="form-label">Confirm Password <span class="required">*</span></label>
+                <div class="password-input-wrap">
+                  <input type="password" id="reg-pass-confirm" class="form-control" placeholder="Repeat your password" required>
+                  <button type="button" class="password-toggle-btn" aria-label="Toggle password visibility">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block btn-lg" style="margin-top: 10px;">
+              Complete Registration &rarr;
+            </button>
+          </form>
+        </div>
+
+        <div class="auth-footer">
+          <p>Already have a profile? <a href="student-login.html">Sign in here</a></p>
+          <div class="demo-security-notice">
+            Demonstration mode: Your profile will be stored locally in this browser's localStorage.
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Visual Side -->
+      <div class="auth-visual-side">
+        <div class="auth-visual-top">
+          <div class="auth-visual-logo">
+            <div class="brand-mark">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="currentColor"/>
+              </svg>
+            </div>
+            <div class="brand-text">
+              <span class="brand-name">Impact<span>Hub</span></span>
+              <span class="brand-tagline">Mentorship Journey</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="auth-visual-middle">
+          <div class="auth-quote-mark">&ldquo;</div>
+          <p class="auth-quote-text">
+            Mentorship isn't about having all the answers â€” it's about asking the right questions together.
+          </p>
+          <div class="auth-quote-author">ImpactHub Guidance Philosophy</div>
+        </div>
+
+        <div class="auth-visual-bottom">
+          <ul class="auth-visual-features">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Free participation for all enrolled undergraduates
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Matched directly with industry and academic specialists
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Immediate access to workshops, clinics, and resources
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/utils.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      Utils.setupPasswordToggles();
+
+      const form = document.getElementById('form-student-register');
+      const alertBox = document.getElementById('auth-alert');
+      const alertText = document.getElementById('auth-alert-text');
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alertBox.classList.remove('active');
+
+        const name = document.getElementById('reg-name').value.trim();
+        const regNum = document.getElementById('reg-num').value.trim();
+        const dept = document.getElementById('reg-dept').value;
+        const year = document.getElementById('reg-year').value;
+        const email = document.getElementById('reg-email').value.trim();
+        const phone = document.getElementById('reg-phone').value.trim();
+        const interests = document.getElementById('reg-interests').value.trim();
+        const pass = document.getElementById('reg-pass').value;
+        const passConfirm = document.getElementById('reg-pass-confirm').value;
+
+        // Validation
+        if (!name || !regNum || !dept || !year || !pass) {
+          alertText.textContent = 'Please fill in all required fields indicated by *.';
+          alertBox.classList.add('active');
+          return;
+        }
+
+        if (pass.length < 4) {
+          alertText.textContent = 'Password must be at least 4 characters for demonstration.';
+          alertBox.classList.add('active');
+          return;
+        }
+
+        if (pass !== passConfirm) {
+          alertText.textContent = 'Passwords do not match. Please re-enter carefully.';
+          alertBox.classList.add('active');
+          return;
+        }
+
+        try {
+          const newStudent = StorageService.createStudent({
+            name,
+            regNumber: regNum,
+            department: dept,
+            year,
+            email,
+            phone,
+            interests
+          });
+
+          // Automatically establish session and redirect to student dashboard
+          StorageService.setCurrentSession({
+            userId: newStudent.id,
+            regNumber: newStudent.regNumber,
+            name: newStudent.name,
+            department: newStudent.department,
+            role: CONFIG.ROLES.STUDENT,
+            loginTime: new Date().toISOString()
+          });
+
+          window.location.href = 'student-dashboard.html';
+        } catch (err) {
+          alertText.textContent = err.message;
+          alertBox.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

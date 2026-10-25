@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Console - ImpactHub</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <div class="sidebar-backdrop"></div>
+
+  <div class="app-layout">
+    <!-- Sidebar Navigation -->
+    <aside class="app-sidebar" aria-label="Administrator Navigation" style="background-color: var(--color-wenge);">
+      <div class="sidebar-header">
+        <a href="index.html" class="brand-logo">
+          <div class="brand-mark" style="background:#FFFFFF; color:var(--color-wenge);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="currentColor"/>
+            </svg>
+          </div>
+          <div class="brand-text">
+            <span class="brand-name">Impact<span>Hub</span></span>
+            <span class="brand-tagline">Admin Suite</span>
+          </div>
+        </a>
+        <button class="sidebar-close-btn" aria-label="Close Navigation">&times;</button>
+      </div>
+
+      <div class="sidebar-role-indicator">
+        <span class="role-dot admin"></span>
+        <span class="role-text-label">Platform Director</span>
+      </div>
+
+      <ul class="sidebar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" data-target="sec-admin-overview">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            Overview &amp; Metrics
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-target="sec-admin-students">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+            Student Management
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-target="sec-admin-volunteers">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            Volunteer Management
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-target="sec-admin-assignments">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            Mentor Assignment
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-target="sec-admin-requests">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            Guidance Requests
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-target="sec-admin-activities">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            Activity Management
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-target="sec-admin-resources">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            Learning Resources
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-target="sec-admin-analytics">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            Reports &amp; Analytics
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-target="sec-admin-announcements">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+            Announcements
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-target="sec-admin-data">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Data Management
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-footer">
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-avatar" style="background:#FFFFFF; color:var(--color-wenge);">A</div>
+          <div class="sidebar-user-meta">
+            <div class="sidebar-user-name">Dr. Sarah Sterling</div>
+            <div class="sidebar-user-sub">Administrator</div>
+          </div>
+        </div>
+        <button class="sidebar-logout-btn" onclick="AuthService.logout()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          Sign Out
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <div class="app-main">
+      <header class="app-topbar">
+        <div class="topbar-left">
+          <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+          <h2 class="topbar-page-title" id="topbar-title">Administrative Console</h2>
+        </div>
+
+        <div class="topbar-right">
+          <div class="topbar-user-pill">
+            <div class="topbar-user-avatar" style="background:var(--color-wenge);">A</div>
+            <span class="topbar-user-name">Dr. Sarah Sterling (Admin)</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Dashboard Content -->
+      <main class="dashboard-content">
+
+        <!-- ================= SECTION A: OVERVIEW ================= -->
+        <section id="sec-admin-overview" class="tab-section active">
+          <div style="margin-bottom: 24px;">
+            <h1 style="font-size: 1.85rem; color: var(--color-wenge);">Platform Operational Overview</h1>
+            <p style="color: var(--color-liver);">Real-time metrics, volunteer approval queues, and pairing status calculated from browser storage.</p>
+          </div>
+
+          <!-- Dynamic Metrics Grid -->
+          <div class="stats-cards-row">
+            <div class="summary-card">
+              <div class="summary-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+              </div>
+              <div class="summary-info">
+                <div class="summary-label">Total Students</div>
+                <div class="summary-value" id="stat-total-students">0</div>
+              </div>
+            </div>
+
+            <div class="summary-card">
+              <div class="summary-icon" style="color:var(--color-rosy-brown);">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <div class="summary-info">
+                <div class="summary-label">Total Volunteers</div>
+                <div class="summary-value" id="stat-total-volunteers">0</div>
+              </div>
+            </div>
+
+            <div class="summary-card">
+              <div class="summary-icon" style="color:#D97706;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              </div>
+              <div class="summary-info">
+                <div class="summary-label">Pending Approvals</div>
+                <div class="summary-value" id="stat-pending-volunteers">0</div>
+              </div>
+            </div>
+
+            <div class="summary-card">
+              <div class="summary-icon" style="color:#1E6B3A;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+              </div>
+              <div class="summary-info">
+                <div class="summary-label">Active Pairings</div>
+                <div class="summary-value" id="stat-active-assignments">0</div>
+              </div>
+            </div>
+
+            <div class="summary-card">
+              <div class="summary-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              </div>
+              <div class="summary-info">
+                <div class="summary-label">Total Requests</div>
+                <div class="summary-value" id="stat-total-requests">0</div>
+              </div>
+            </div>
+
+            <div class="summary-card">
+              <div class="summary-icon" style="color:#206236;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </div>
+              <div class="summary-info">
+                <div class="summary-label">Concluded Sessions</div>
+                <div class="summary-value" id="stat-completed-sessions">0</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dashboard-grid-equal">
+            <!-- Recent Session Activity -->
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Recent Guidance Activity</h3>
+              </div>
+              <div class="card-body" id="admin-activity-stream">
+                <!-- Dynamically populated -->
+              </div>
+            </div>
+
+            <!-- Quick Pairing Shortcut Card -->
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Administrative Quick Controls</h3>
+              </div>
+              <div class="card-body">
+                <p style="font-size:0.92rem; color:var(--color-liver); margin-bottom:18px;">
+                  Quick shortcuts to core administrative actions:
+                </p>
+                <div style="display:flex; flex-direction:column; gap:10px;">
+                  <button class="btn btn-outline" onclick="document.querySelector('[data-target=\'sec-admin-volunteers\']').click();">
+                    Review Pending Volunteer Applications &rarr;
+                  </button>
+                  <button class="btn btn-outline" onclick="document.querySelector('[data-target=\'sec-admin-assignments\']').click();">
+                    Pair or Reassign Mentors &rarr;
+                  </button>
+                  <button class="btn btn-outline" onclick="Utils.openModal('modal-create-activity');">
+                    + Publish Campus Workshop / Activity &rarr;
+                  </button>
+                  <button class="btn btn-outline" onclick="Utils.openModal('modal-create-resource');">
+                    + Add Curated Learning Resource &rarr;
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= SECTION B: STUDENT MANAGEMENT ================= -->
+        <section id="sec-admin-students" class="tab-section">
+          <div style="margin-bottom: 24px;">
+            <h1 style="font-size: 1.85rem; color: var(--color-wenge);">Student Directory &amp; Management</h1>
+            <p style="color: var(--color-liver);">Search, filter, edit profile fields, and toggle active states for undergraduate accounts.</p>
+          </div>
+
+          <div class="toolbar-row">
+            <div class="search-input-wrap">
+              <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              <input type="text" id="admin-student-search" class="form-control" placeholder="Search by name, reg number, department..." oninput="AdminApp.renderStudentsTable()">
+            </div>
+            <div class="filter-group">
+              <select id="admin-student-filter-dept" class="form-control" onchange="AdminApp.renderStudentsTable()" style="min-width: 220px;">
+                <option value="all">All Departments</option>
+                <option value="Computer Science & Engineering">Computer Science &amp; Eng.</option>
+                <option value="Data Science & Analytics">Data Science &amp; Analytics</option>
+                <option value="Mechanical Engineering">Mechanical Engineering</option>
+                <option value="Electrical Engineering">Electrical Engineering</option>
+                <option value="Business Administration">Business Administration</option>
+                <option value="Information Technology">Information Technology</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Student Name</th>
+                    <th>Reg Number</th>
+                    <th>Department &amp; Year</th>
+                    <th>Current Mentor</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="admin-students-table-body">
+                  <!-- Dynamically populated -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= SECTION C: VOLUNTEER MANAGEMENT ================= -->
+        <section id="sec-admin-volunteers" class="tab-section">
+          <div style="margin-bottom: 24px;">
+            <h1 style="font-size: 1.85rem; color: var(--color-wenge);">Volunteer Mentors &amp; Approvals</h1>
+            <p style="color: var(--color-liver);">Approve pending applications, manage volunteer mentors, and edit guidance competencies.</p>
+          </div>
+
+          <div class="toolbar-row">
+            <div class="search-input-wrap">
+              <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              <input type="text" id="admin-vol-search" class="form-control" placeholder="Search by name, ID, expertise..." oninput="AdminApp.renderVolunteersTable()">
+            </div>
+            <div class="filter-group">
+              <select id="admin-vol-filter-status" class="form-control" onchange="AdminApp.renderVolunteersTable()" style="min-width: 180px;">
+                <option value="all">All Statuses</option>
+                <option value="Approved">Approved Only</option>
+                <option value="Pending">Pending Applications</option>
+                <option value="Inactive">Inactive</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Volunteer Name &amp; ID</th>
+                    <th>Expertise &amp; Skills</th>
+                    <th>Availability</th>
+                    <th>Assigned</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="admin-volunteers-table-body">
+                  <!-- Dynamically populated -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= SECTION D: MENTOR ASSIGNMENT ================= -->
+        <section id="sec-admin-assignments" class="tab-section">
+          <div style="margin-bottom: 24px;">
+            <h1 style="font-size: 1.85rem; color: var(--color-wenge);">Mentor-Student Pairings</h1>
+            <p style="color: var(--color-liver);">Assign approved volunteer mentors to students or reassign when needed. Automatically prevents duplicate active assignments.</p>
+          </div>
+
+          <div class="card mb-lg" style="max-width: 820px;">
+            <div class="card-header">
+              <h3 class="card-title">Create or Update Mentor Pairing</h3>
+            </div>
+            <div class="card-body">
+              <form id="form-create-assignment">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="asg-student-select" class="form-label">Student <span class="required">*</span></label>
+                    <select id="asg-student-select" class="form-control" required></select>
+                  </div>
+                  <div class="form-group">
+                    <label for="asg-volunteer-select" class="form-label">Approved Volunteer Mentor <span class="required">*</span></label>
+                    <select id="asg-volunteer-select" class="form-control" required></select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="asg-notes" class="form-label">Pairing Context / Administrative Notes</label>
+                  <input type="text" id="asg-notes" class="form-control" placeholder="e.g. Matched for capstone design and career guidance">
+                </div>
+                <button type="submit" class="btn btn-primary">Save Assignment &amp; Notify Student</button>
+              </form>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Active Platform Pairings</h3>
+            </div>
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Student</th>
+                    <th>Assigned Volunteer</th>
+                    <th>Assigned Date</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="admin-assignments-table-body">
+                  <!-- Dynamically populated -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= SECTION E: GUIDANCE REQUESTS ================= -->
+        <section id="sec-admin-requests" class="tab-section">
+          <div style="margin-bottom: 24px;">
+            <h1 style="font-size: 1.85rem; color: var(--color-wenge);">Guidance Request Oversight</h1>
+            <p style="color: var(--color-liver);">Monitor all guidance requests submitted across the platform to ensure timely volunteer response.</p>
+          </div>
+
+          <div class="toolbar-row">
+            <div class="filter-group">
+              <select id="admin-req-filter-status" class="form-control" onchange="AdminApp.renderGuidanceRequests()" style="min-width: 180px;">
+                <option value="all">All Request Statuses</option>
+                <option value="Requested">Requested (Pending)</option>
+                <option value="Accepted">Accepted</option>
+                <option value="Scheduled">Scheduled</option>
+                <option value="Completed">Completed</option>
+                <option value="Declined">Declined</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Student</th>
+                    <th>Volunteer</th>
+                    <th>Requested Topic</th>
+                    <th>Preferred Date</th>
+                    <th>Status</th>
+                    <th>Submitted</th>
+                  </tr>
+                </thead>
+                <tbody id="admin-requests-table-body">
+                  <!-- Dynamically populated -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= SECTION F: ACTIVITY MANAGEMENT ================= -->
+        <section id="sec-admin-activities" class="tab-section">
+          <div class="flex-between mb-lg" style="flex-wrap: wrap; gap: 16px;">
+            <div>
+              <h1 style="font-size: 1.85rem; color: var(--color-wenge);">Student Development Activities</h1>
+              <p style="color: var(--color-liver);">Create and manage seminars, hackathons, and workshops visible to all students.</p>
+            </div>
+            <button class="btn btn-primary" onclick="Utils.openModal('modal-create-activity')">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              Create Activity
+            </button>
+          </div>
+
+          <div class="card">
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Activity Title</th>
+                    <th>Category</th>
+                    <th>Date &amp; Time</th>
+                    <th>Location</th>
+                    <th>Attendance</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="admin-activities-table-body">
+                  <!-- Dynamically populated -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= SECTION G: LEARNING RESOURCES ================= -->
+        <section id="sec-admin-resources" class="tab-section">
+          <div class="flex-between mb-lg" style="flex-wrap: wrap; gap: 16px;">
+            <div>
+              <h1 style="font-size: 1.85rem; color: var(--color-wenge);">Learning Resource Management</h1>
+              <p style="color: var(--color-liver);">Curate, edit, and publish guides for student academic and personal development.</p>
+            </div>
+            <button class="btn btn-primary" onclick="Utils.openModal('modal-create-resource')">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              Add New Resource
+            </button>
+          </div>
+
+          <div class="card">
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Title &amp; Preview</th>
+                    <th>Category</th>
+                    <th>Curator / Author</th>
+                    <th>External Link</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="admin-resources-table-body">
+                  <!-- Dynamically populated -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= SECTION H: REPORTS & ANALYTICS ================= -->
+        <section id="sec-admin-analytics" class="tab-section">
+          <div style="margin-bottom: 24px;">
+            <h1 style="font-size: 1.85rem; color: var(--color-wenge);">Platform Reports &amp; Analytics</h1>
+            <p style="color: var(--color-liver);">Visual charts computed live from browser storage state.</p>
+          </div>
+
+          <div class="charts-grid">
+            <!-- Student Department Distribution Chart -->
+            <div class="chart-box">
+              <div class="chart-header">
+                <h3 class="chart-title">Students by Department</h3>
+              </div>
+              <div id="chart-students-dept"></div>
+            </div>
+
+            <!-- Session Status Donut Chart -->
+            <div class="chart-box">
+              <div class="chart-header">
+                <h3 class="chart-title">Guidance Session Outcomes</h3>
+              </div>
+              <div id="chart-sessions-donut"></div>
+            </div>
+          </div>
+
+          <div class="chart-box">
+            <div class="chart-header">
+              <h3 class="chart-title">Volunteer Application &amp; Approval Pipeline</h3>
+            </div>
+            <div id="chart-volunteer-status"></div>
+          </div>
+        </section>
+
+        <!-- ================= SECTION I: ANNOUNCEMENTS ================= -->
+        <section id="sec-admin-announcements" class="tab-section">
+          <div class="flex-between mb-lg" style="flex-wrap: wrap; gap: 16px;">
+            <div>
+              <h1 style="font-size: 1.85rem; color: var(--color-wenge);">Platform Announcements</h1>
+              <p style="color: var(--color-liver);">Publish announcements visible to students, volunteers, or the entire community.</p>
+            </div>
+            <button class="btn btn-primary" onclick="Utils.openModal('modal-create-announcement')">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              New Announcement
+            </button>
+          </div>
+
+          <div id="admin-announcements-list">
+            <!-- Dynamically populated -->
+          </div>
+        </section>
+
+        <!-- ================= SECTION J: DATA MANAGEMENT ================= -->
+        <section id="sec-admin-data" class="tab-section">
+          <div style="margin-bottom: 24px;">
+            <h1 style="font-size: 1.85rem; color: var(--color-wenge);">Demonstration State Management</h1>
+            <p style="color: var(--color-liver);">Manage local browser demonstration data, export JSON snapshots, or reset to initial sample values.</p>
+          </div>
+
+          <div class="dashboard-grid-equal">
+            <!-- Reset Demo Data Card -->
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Reset Demonstration Data</h3>
+              </div>
+              <div class="card-body">
+                <p style="font-size:0.92rem; color:var(--color-liver); margin-bottom:18px;">
+                  Revert all modifications and reload the original 6 sample students, 4 volunteers, assignments, requests, activities, and resources.
+                </p>
+                <button class="btn btn-danger" onclick="AdminApp.confirmResetDemoData()">
+                  Reset Demo Data to Defaults
+                </button>
+              </div>
+            </div>
+
+            <!-- Export JSON Card -->
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Export State as JSON</h3>
+              </div>
+              <div class="card-body">
+                <p style="font-size:0.92rem; color:var(--color-liver); margin-bottom:18px;">
+                  Download a complete JSON file containing all entities currently stored in your browser's localStorage.
+                </p>
+                <button class="btn btn-outline" onclick="StorageService.exportDataAsJSON()">
+                  Download JSON Snapshot &darr;
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Modal: Edit Student -->
+  <div class="modal-backdrop" id="modal-edit-student">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-edit-stu-title">
+      <div class="modal-header">
+        <h3 id="modal-edit-stu-title">Edit Student Profile</h3>
+        <button class="modal-close-btn" onclick="Utils.closeModal('modal-edit-student')">&times;</button>
+      </div>
+      <form id="form-edit-student">
+        <div class="modal-body">
+          <input type="hidden" id="edit-stu-id">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="edit-stu-name" class="form-label">Full Name <span class="required">*</span></label>
+              <input type="text" id="edit-stu-name" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="edit-stu-reg" class="form-label">Registration Number</label>
+              <input type="text" id="edit-stu-reg" class="form-control" readonly style="background:#FAF5F6;">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="edit-stu-dept" class="form-label">Department <span class="required">*</span></label>
+              <select id="edit-stu-dept" class="form-control" required>
+                <option value="Computer Science & Engineering">Computer Science &amp; Engineering</option>
+                <option value="Data Science & Analytics">Data Science &amp; Analytics</option>
+                <option value="Mechanical Engineering">Mechanical Engineering</option>
+                <option value="Electrical Engineering">Electrical Engineering</option>
+                <option value="Business Administration">Business Administration</option>
+                <option value="Information Technology">Information Technology</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="edit-stu-year" class="form-label">Year of Study <span class="required">*</span></label>
+              <select id="edit-stu-year" class="form-control" required>
+                <option value="1st Year">1st Year</option>
+                <option value="2nd Year">2nd Year</option>
+                <option value="3rd Year">3rd Year</option>
+                <option value="4th Year">4th Year</option>
+                <option value="Graduate">Graduate</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="edit-stu-email" class="form-label">Email</label>
+              <input type="email" id="edit-stu-email" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="edit-stu-phone" class="form-label">Phone</label>
+              <input type="tel" id="edit-stu-phone" class="form-control">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="edit-stu-interests" class="form-label">Guidance Interests</label>
+            <input type="text" id="edit-stu-interests" class="form-control">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" onclick="Utils.closeModal('modal-edit-student')">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Student</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Edit Volunteer -->
+  <div class="modal-backdrop" id="modal-edit-volunteer">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-edit-vol-title">
+      <div class="modal-header">
+        <h3 id="modal-edit-vol-title">Edit Volunteer Details</h3>
+        <button class="modal-close-btn" onclick="Utils.closeModal('modal-edit-volunteer')">&times;</button>
+      </div>
+      <form id="form-edit-volunteer">
+        <div class="modal-body">
+          <input type="hidden" id="edit-vol-id">
+          <div class="form-group">
+            <label for="edit-vol-name" class="form-label">Full Name &amp; Title <span class="required">*</span></label>
+            <input type="text" id="edit-vol-name" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="edit-vol-expertise" class="form-label">Area of Expertise <span class="required">*</span></label>
+            <input type="text" id="edit-vol-expertise" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="edit-vol-skills" class="form-label">Guidance Skills</label>
+            <input type="text" id="edit-vol-skills" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="edit-vol-avail" class="form-label">Availability</label>
+            <input type="text" id="edit-vol-avail" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="edit-vol-email" class="form-label">Contact Email</label>
+            <input type="email" id="edit-vol-email" class="form-control">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" onclick="Utils.closeModal('modal-edit-volunteer')">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Create Activity -->
+  <div class="modal-backdrop" id="modal-create-activity">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-act-title-h">
+      <div class="modal-header">
+        <h3 id="modal-act-title-h">Create Campus Activity</h3>
+        <button class="modal-close-btn" onclick="Utils.closeModal('modal-create-activity')">&times;</button>
+      </div>
+      <form id="form-create-activity">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="act-title" class="form-label">Activity Title <span class="required">*</span></label>
+            <input type="text" id="act-title" class="form-control" placeholder="e.g. Capstone Presentation Masterclass" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="act-category" class="form-label">Category <span class="required">*</span></label>
+              <select id="act-category" class="form-control" required>
+                <option value="Workshop">Workshop</option>
+                <option value="Seminar">Seminar</option>
+                <option value="Competition">Competition</option>
+                <option value="Career Clinic">Career Clinic</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="act-capacity" class="form-label">Capacity Limit</label>
+              <input type="number" id="act-capacity" class="form-control" value="60" min="5">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="act-date" class="form-label">Date <span class="required">*</span></label>
+              <input type="date" id="act-date" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="act-time" class="form-label">Time Slot</label>
+              <input type="text" id="act-time" class="form-control" placeholder="e.g. 15:00 - 17:00">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="act-location" class="form-label">Location / Stream URL</label>
+            <input type="text" id="act-location" class="form-control" placeholder="Campus Innovation Hall or Virtual Auditorium">
+          </div>
+          <div class="form-group">
+            <label for="act-desc" class="form-label">Description <span class="required">*</span></label>
+            <textarea id="act-desc" class="form-control" rows="3" placeholder="Explain the focus and key student takeaways..." required></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" onclick="Utils.closeModal('modal-create-activity')">Cancel</button>
+          <button type="submit" class="btn btn-primary">Publish Activity</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Edit Activity -->
+  <div class="modal-backdrop" id="modal-edit-activity">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-edit-act-h">
+      <div class="modal-header">
+        <h3 id="modal-edit-act-h">Edit Activity Details</h3>
+        <button class="modal-close-btn" onclick="Utils.closeModal('modal-edit-activity')">&times;</button>
+      </div>
+      <form id="form-edit-activity">
+        <div class="modal-body">
+          <input type="hidden" id="edit-act-id">
+          <div class="form-group">
+            <label for="edit-act-title" class="form-label">Title <span class="required">*</span></label>
+            <input type="text" id="edit-act-title" class="form-control" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="edit-act-category" class="form-label">Category</label>
+              <select id="edit-act-category" class="form-control" required>
+                <option value="Workshop">Workshop</option>
+                <option value="Seminar">Seminar</option>
+                <option value="Competition">Competition</option>
+                <option value="Career Clinic">Career Clinic</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="edit-act-capacity" class="form-label">Capacity Limit</label>
+              <input type="number" id="edit-act-capacity" class="form-control" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="edit-act-date" class="form-label">Date</label>
+              <input type="date" id="edit-act-date" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="edit-act-time" class="form-label">Time</label>
+              <input type="text" id="edit-act-time" class="form-control">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="edit-act-location" class="form-label">Location</label>
+            <input type="text" id="edit-act-location" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="edit-act-desc" class="form-label">Description</label>
+            <textarea id="edit-act-desc" class="form-control" rows="3"></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" onclick="Utils.closeModal('modal-edit-activity')">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Create Resource -->
+  <div class="modal-backdrop" id="modal-create-resource">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-res-title-h">
+      <div class="modal-header">
+        <h3 id="modal-res-title-h">Add Learning Resource</h3>
+        <button class="modal-close-btn" onclick="Utils.closeModal('modal-create-resource')">&times;</button>
+      </div>
+      <form id="form-create-resource">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="res-title" class="form-label">Resource Title <span class="required">*</span></label>
+            <input type="text" id="res-title" class="form-control" placeholder="e.g. Guide to Writing Engineering Thesis Proposals" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="res-category" class="form-label">Category <span class="required">*</span></label>
+              <input type="text" id="res-category" class="form-control" placeholder="e.g. Academic Writing, Career Development" required>
+            </div>
+            <div class="form-group">
+              <label for="res-author" class="form-label">Author / Organization</label>
+              <input type="text" id="res-author" class="form-control" placeholder="ImpactHub Advisory Board">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="res-url" class="form-label">External Reference URL (Optional)</label>
+            <input type="url" id="res-url" class="form-control" placeholder="https://example.edu/guide">
+          </div>
+          <div class="form-group">
+            <label for="res-desc" class="form-label">Description / Summary <span class="required">*</span></label>
+            <textarea id="res-desc" class="form-control" rows="3" placeholder="Provide an actionable summary of this resource..." required></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" onclick="Utils.closeModal('modal-create-resource')">Cancel</button>
+          <button type="submit" class="btn btn-primary">Publish Resource</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Edit Resource -->
+  <div class="modal-backdrop" id="modal-edit-resource">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-edit-res-h">
+      <div class="modal-header">
+        <h3 id="modal-edit-res-h">Edit Learning Resource</h3>
+        <button class="modal-close-btn" onclick="Utils.closeModal('modal-edit-resource')">&times;</button>
+      </div>
+      <form id="form-edit-resource">
+        <div class="modal-body">
+          <input type="hidden" id="edit-res-id">
+          <div class="form-group">
+            <label for="edit-res-title" class="form-label">Title <span class="required">*</span></label>
+            <input type="text" id="edit-res-title" class="form-control" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="edit-res-category" class="form-label">Category</label>
+              <input type="text" id="edit-res-category" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="edit-res-author" class="form-label">Author</label>
+              <input type="text" id="edit-res-author" class="form-control">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="edit-res-url" class="form-label">URL</label>
+            <input type="url" id="edit-res-url" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="edit-res-desc" class="form-label">Description</label>
+            <textarea id="edit-res-desc" class="form-control" rows="3" required></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" onclick="Utils.closeModal('modal-edit-resource')">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Create Announcement -->
+  <div class="modal-backdrop" id="modal-create-announcement">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-ann-h">
+      <div class="modal-header">
+        <h3 id="modal-ann-h">Publish Platform Announcement</h3>
+        <button class="modal-close-btn" onclick="Utils.closeModal('modal-create-announcement')">&times;</button>
+      </div>
+      <form id="form-create-announcement">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="ann-title" class="form-label">Announcement Title <span class="required">*</span></label>
+            <input type="text" id="ann-title" class="form-control" placeholder="e.g. End of Semester Mentoring Milestone Reviews" required>
+          </div>
+          <div class="form-group">
+            <label for="ann-target" class="form-label">Target Audience <span class="required">*</span></label>
+            <select id="ann-target" class="form-control" required>
+              <option value="all">Entire Community (All Roles)</option>
+              <option value="student">Students Only</option>
+              <option value="volunteer">Volunteers Only</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="ann-message" class="form-label">Announcement Message <span class="required">*</span></label>
+            <textarea id="ann-message" class="form-control" rows="4" placeholder="Draft your announcement message..." required></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" onclick="Utils.closeModal('modal-create-announcement')">Cancel</button>
+          <button type="submit" class="btn btn-primary">Broadcast Announcement</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/admin.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      Utils.initMobileSidebar();
+      AdminApp.init();
+    });
+  </script>
+</body>
+</html>

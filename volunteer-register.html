@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Volunteer Registration - ImpactHub</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/auth.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <div class="auth-wrapper">
+    <div class="auth-card-split" style="max-width: 1100px;">
+      <!-- Left Form Side -->
+      <div class="auth-form-side">
+        <div>
+          <div class="auth-top-bar">
+            <a href="volunteer-login.html" class="back-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+              Back to Volunteer Login
+            </a>
+            <span class="auth-role-tag tag-volunteer">Mentor Application</span>
+          </div>
+
+          <div class="auth-header">
+            <h1 class="auth-title">Apply as a Volunteer Mentor</h1>
+            <p class="auth-subtitle">Share your expertise and empower students. Applications are reviewed by the platform administrator.</p>
+          </div>
+
+          <!-- Inline Alerts -->
+          <div id="auth-alert" class="auth-alert error" role="alert">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <span id="auth-alert-text">Error text</span>
+          </div>
+
+          <div id="auth-alert-success" class="auth-alert success" role="alert" style="display:none;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span>
+              <strong>Application Submitted!</strong> Your volunteer profile is saved with <em>Pending</em> approval status. To approve it for immediate login, open the <a href="admin-login.html" style="text-decoration:underline; font-weight:700;">Admin Console</a>.
+            </span>
+          </div>
+
+          <form id="form-volunteer-register" class="auth-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="vol-name" class="form-label">Full Name &amp; Title <span class="required">*</span></label>
+                <input type="text" id="vol-name" class="form-control" placeholder="e.g. Dr. Jordan Hayes" required>
+              </div>
+              <div class="form-group">
+                <label for="vol-id" class="form-label">Desired Volunteer ID <span class="required">*</span></label>
+                <input type="text" id="vol-id" class="form-control" placeholder="e.g. VOL2024099" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="vol-expertise" class="form-label">Area of Expertise / Discipline <span class="required">*</span></label>
+              <input type="text" id="vol-expertise" class="form-control" placeholder="e.g. Cloud Computing, Biomedical Research, Mechanical Prototyping" required>
+            </div>
+
+            <div class="form-group">
+              <label for="vol-skills" class="form-label">Key Guidance Skills (Comma-separated) <span class="required">*</span></label>
+              <input type="text" id="vol-skills" class="form-control" placeholder="e.g. Python, System Architecture, Resume Building, Time Allocation" required>
+            </div>
+
+            <div class="form-group">
+              <label for="vol-avail" class="form-label">General Availability <span class="required">*</span></label>
+              <input type="text" id="vol-avail" class="form-control" placeholder="e.g. Tuesdays &amp; Thursdays, 3:00 PM â€“ 6:00 PM" required>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="vol-email" class="form-label">Professional Email</label>
+                <input type="email" id="vol-email" class="form-control" placeholder="mentor@domain.org">
+              </div>
+              <div class="form-group">
+                <label for="vol-phone" class="form-label">Contact Phone</label>
+                <input type="tel" id="vol-phone" class="form-control" placeholder="+1 (555) 123-4567">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="vol-pass" class="form-label">Password <span class="required">*</span></label>
+                <div class="password-input-wrap">
+                  <input type="password" id="vol-pass" class="form-control" placeholder="Create a password" required>
+                  <button type="button" class="password-toggle-btn" aria-label="Toggle password visibility">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                  </button>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="vol-pass-confirm" class="form-label">Confirm Password <span class="required">*</span></label>
+                <div class="password-input-wrap">
+                  <input type="password" id="vol-pass-confirm" class="form-control" placeholder="Confirm password" required>
+                  <button type="button" class="password-toggle-btn" aria-label="Toggle password visibility">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-secondary btn-block btn-lg" style="margin-top: 10px;">
+              Submit Volunteer Application &rarr;
+            </button>
+          </form>
+        </div>
+
+        <div class="auth-footer">
+          <p>Already an approved volunteer? <a href="volunteer-login.html">Sign in here</a></p>
+          <div class="demo-security-notice">
+            Simulated Workflow: Registered volunteers require administrator approval before logging in.
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Visual Side -->
+      <div class="auth-visual-side">
+        <div class="auth-visual-top">
+          <div class="auth-visual-logo">
+            <div class="brand-mark" style="background:#FFFFFF; color:var(--color-rosy-brown);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="currentColor"/>
+              </svg>
+            </div>
+            <div class="brand-text">
+              <span class="brand-name">Impact<span>Hub</span></span>
+              <span class="brand-tagline">Volunteer Community</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="auth-visual-middle">
+          <div class="auth-quote-mark">&ldquo;</div>
+          <p class="auth-quote-text">
+            Guiding just one student through their undergraduate journey can alter the trajectory of their entire professional career.
+          </p>
+          <div class="auth-quote-author">ImpactHub Volunteer Advisory</div>
+        </div>
+
+        <div class="auth-visual-bottom">
+          <ul class="auth-visual-features">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Flexible schedule: mentor around your own professional calendar
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Matched directly with students in your specific field
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Full control over session frequency and guidance notes
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/utils.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      Utils.setupPasswordToggles();
+
+      const form = document.getElementById('form-volunteer-register');
+      const alertBox = document.getElementById('auth-alert');
+      const alertText = document.getElementById('auth-alert-text');
+      const successBox = document.getElementById('auth-alert-success');
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alertBox.classList.remove('active');
+
+        const name = document.getElementById('vol-name').value.trim();
+        const volId = document.getElementById('vol-id').value.trim();
+        const expertise = document.getElementById('vol-expertise').value.trim();
+        const skills = document.getElementById('vol-skills').value.trim();
+        const avail = document.getElementById('vol-avail').value.trim();
+        const email = document.getElementById('vol-email').value.trim();
+        const phone = document.getElementById('vol-phone').value.trim();
+        const pass = document.getElementById('vol-pass').value;
+        const passConfirm = document.getElementById('vol-pass-confirm').value;
+
+        if (!name || !volId || !expertise || !skills || !avail || !pass) {
+          alertText.textContent = 'Please fill in all required fields indicated by *.';
+          alertBox.classList.add('active');
+          return;
+        }
+
+        if (pass.length < 4) {
+          alertText.textContent = 'Password must be at least 4 characters for demonstration.';
+          alertBox.classList.add('active');
+          return;
+        }
+
+        if (pass !== passConfirm) {
+          alertText.textContent = 'Passwords do not match.';
+          alertBox.classList.add('active');
+          return;
+        }
+
+        try {
+          StorageService.createVolunteer({
+            name,
+            volunteerId: volId,
+            expertise,
+            skills,
+            availability: avail,
+            email,
+            phone
+          });
+
+          form.style.display = 'none';
+          successBox.style.display = 'flex';
+          Utils.showToast('Application Submitted', 'Your profile is awaiting simulated admin approval.', 'info');
+        } catch (err) {
+          alertText.textContent = err.message;
+          alertBox.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
