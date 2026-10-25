@@ -7,6 +7,7 @@
 ## 1. Project Overview
 **ImpactHub** is an accessible, responsive, multipage web application engineered to bridge university undergraduates seeking academic and career direction with dedicated volunteer mentors, alumni, and educators. An administrative portal oversees the entire system — approving volunteer applications, matching students to mentors, managing developmental activities, and analyzing platform engagement.
 
+
 Built entirely using clean semantic **HTML5**, modern **CSS3**, and **Vanilla JavaScript (ES6+)**, the platform utilizes the browser's persistent **localStorage** to maintain realistic demonstration state without requiring backend servers or database installations.
 
 ---
